@@ -16,7 +16,7 @@ function onPlay(currentTime) {
 localStorage.setItem(LOCALSTORAGE_KEY, currentTime)
 }
 //const errorMessage = "Error"
-//receivedTime === 0 ?  errorMessage : player.setCurrentTime(receivedTime)
+//receivedTime === null ?  errorMessage : player.setCurrentTime(receivedTime)
 
 
 

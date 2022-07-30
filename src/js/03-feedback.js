@@ -31,10 +31,29 @@ function onTextareaInput(e) {
 
 function populateTextarea() {
     const savedData = JSON.parse(localStorage.getItem(LOCALSTORAGE_KEY));
-    if (savedData.email) {
+    //if(form.elements.email.value === "null" && form.elements.message.value === "null") {
+   // console.log('error')
+  //  return
+    if(savedData.email.value === "null" && savedData.message.value === "null") {
+            console.log('error')
+            return
+    }
+   // if (savedData.email.value && savedData.message.value) {
         form.elements.email.value = savedData.email;
-    }
-    if (savedData.message) {
         form.elements.message.value = savedData.message;
-    }
+   // } else {
+       // if(savedData.email.value === "null" && savedData.message.value === "null") {
+        //    console.log('error')
+          //  return
+   // }//
 }
+
+    //const savedData = JSON.parse(localStorage.getItem(LOCALSTORAGE_KEY));
+    //if (savedData.email) {
+    //   form.elements.email.value = savedData.email;
+   // }
+    //if (savedData.message) {
+     //  form.elements.message.value = savedData.message;
+    //}
+    
+//

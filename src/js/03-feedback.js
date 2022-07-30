@@ -30,30 +30,19 @@ function onTextareaInput(e) {
 }
 
 function populateTextarea() {
-    const savedData = JSON.parse(localStorage.getItem(LOCALSTORAGE_KEY));
-    //if(form.elements.email.value === "null" && form.elements.message.value === "null") {
-   // console.log('error')
-  //  return
-    if(savedData.email.value === "null" && savedData.message.value === "null") {
-            console.log('error')
-            return
+       
+   
+     if (!localStorage.getItem(LOCALSTORAGE_KEY)) {
+        return
     }
-   // if (savedData.email.value && savedData.message.value) {
+    
+       const savedData = JSON.parse(localStorage.getItem(LOCALSTORAGE_KEY));
         form.elements.email.value = savedData.email;
         form.elements.message.value = savedData.message;
-   // } else {
-       // if(savedData.email.value === "null" && savedData.message.value === "null") {
-        //    console.log('error')
-          //  return
-   // }//
+    
+    
 }
 
-    //const savedData = JSON.parse(localStorage.getItem(LOCALSTORAGE_KEY));
-    //if (savedData.email) {
-    //   form.elements.email.value = savedData.email;
-   // }
-    //if (savedData.message) {
-     //  form.elements.message.value = savedData.message;
-    //}
-    
-//
+// if (form.elements.email.value === "" && form.elements.message.value === "") {
+      //  console.log('error')
+     //   return

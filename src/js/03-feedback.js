@@ -29,20 +29,29 @@ function onTextareaInput(e) {
     
 }
 
-function populateTextarea() {
+//function populateTextarea() {
        
    
-     if (!localStorage.getItem(LOCALSTORAGE_KEY)) {
-        return
-    }
+    // if (!localStorage.getItem(LOCALSTORAGE_KEY)) {
+     //   return
+  //  }
     
-       const savedData = JSON.parse(localStorage.getItem(LOCALSTORAGE_KEY));
-        form.elements.email.value = savedData.email;
-        form.elements.message.value = savedData.message;
+    //   const savedData = JSON.parse(localStorage.getItem(LOCALSTORAGE_KEY));
+   //     form.elements.email.value = savedData.email;
+   //     form.elements.message.value = savedData.message;
     
     
-}
+//}
 
 // if (form.elements.email.value === "" && form.elements.message.value === "") {
       //  console.log('error')
      //   return
+function populateTextarea(e) {
+    const saveForm = localStorage.getItem(LOCALSTORAGE_KEY);
+    const saveFormPars = JSON.parse(saveForm);
+    if (saveForm) {
+        form.elements.email.value = saveFormPars.email || "";
+        form.elements.message.value = saveFormPars.message || "";
+     console.log(saveFormPars);
+    };
+};
